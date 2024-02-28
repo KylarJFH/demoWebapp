@@ -30,7 +30,7 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-	"extendedDiagnostics": {
+    "extendedDiagnostics": {
       "checks": {
         "optionalChainNotNullable": "suppress"
       }
