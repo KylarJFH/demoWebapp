@@ -1,10 +1,10 @@
 #button {
-    font-size: 12px;
+    font-size: 13px;
     min-width: 150px;
     position: relative;
     background-color: transparent; 
     border: 1px solid #CCC; 
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 4px 10px;
     display: inline-block;
     cursor: pointer;
@@ -14,7 +14,7 @@
       position: absolute;
       background-color: #ffff;
       border: 1px solid #CCC;
-      border-radius: 10px;
+      border-radius: 5px;
       top: 100%;
       left: 0;
       padding: 4px 10px;

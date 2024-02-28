@@ -1,10 +1,10 @@
 {
-	"genderFemale": "female",
-	"genderMale": "male",
-	"genderOther": "other",
-	"madeBy": "Made by {author}",
-	"numberOfNewMessages": "You have {count, plural, =0{no new messages} =1{one new message} other{{count} new messages}}}.",
-	"prefGender": "{gender, select, male{male} female{female} other{other}}",
-	"selectGender": "Select preferred gender",
-	"welcomeMessage": "Welcome to this {title}, {gender, select, male{Mr. {surname}} female{Ms. {surname}} other{{username}}}."
+  "genderFemale": "female",
+  "genderMale": "male",
+  "genderOther": "other",
+  "madeBy": "Made by {author}",
+  "numberOfNewMessages": "You have {count, plural, =0{no new messages} =1{one new message} other{{count} new messages}}.",
+  "prefGender": "{gender, select, male{male} female{female} other{other}}",
+  "selectGender": "Select preferred gender",
+  "welcomeMessage": "Welcome to this {title}, {gender, select, male{Mr. {surname}} female{Ms. {surname}} other{{username}}}."
 }

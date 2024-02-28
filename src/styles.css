@@ -4,3 +4,18 @@
     background-color: #ffc100;
     color: #fff;
 }
+
+#div-text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#div-text1 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 10px;
+}

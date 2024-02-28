@@ -9,23 +9,37 @@ import { TranslateService } from '@ngx-translate/core';
         <a class="navbar-item" href="https://www.bender.de/" target='_blank'>
           <img src="../assets/img/logo.png"/>
         </a>
-        <button (click)="useLanguage('de')">
-          <img src="../assets/img/de-flag.png" style="max-height: 35px;"/>
+        <button (click)="translate.use('de')" id="button">
+          <img src="../assets/img/de-flag.png" id="flag-img"/>
         </button>
-        <button (click)="useLanguage('en')">
-          <img src="../assets/img/us-flag.png" style="max-height: 35px;"/>
+        <button (click)="translate.use('en')" id="button">
+          <img src="../assets/img/us-flag.png" id="flag-img"/>
         </button>
       </div>
     </div>
   `,
-  styles: ``
-})
-export class HeaderComponent {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+  styles: `
+  #button {
+    background: none;
+    border: none;
+    padding: 0 5;
+    #flag-img {
+      width: 45px;
+      height: auto;
+      border: 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: filter 0.3s;
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
   }
-  useLanguage(language: string): void {
-    this.translate.use(language);
+  `
+})
+
+export class HeaderComponent {
+  constructor(public translate: TranslateService) {
+    translate.setDefaultLang('en');
   }
 }

@@ -1,56 +1,46 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import defaultLanguage from "./../assets/i18n/en.json";
 import { GenderSelectComponent } from './gender-select/gender-select.component';
+import { UserDataComponent } from './user-data/user-data.component';
 
 @Component({
   selector: 'app-root',
   template: `
     <app-header/>
-    <div style="display: flex; align-items: flex-start; flex-direction: column">
+    <div id="div-text">
       <div>
-        <h1>{{ 'welcomeMessage' | translate: {title: 'Demo Web App', gender: genderSelect?.prefGender?.value, surname: surname, username: username} }}</h1>
+        <h1>{{ 'welcomeMessage' | translate: {title: 'Demo Web App', gender: genderSelect?.prefGender?.value, surname: userData?.surname, username: userData?.username} }}</h1>
         <p>{{ 'numberOfNewMessages' | translate: {count: newMessages} }}</p>
       </div>
-      <app-gender-select/>
-      <label for="username">Username:</label>
-        <input type="text" id="username" [(ngModel)]="username">
-        <label for="surname">Surname:</label>
-        <input type="text" id="surname" [(ngModel)]="surname">
+      <div id="div-text1">
+        <app-gender-select/>
+        <app-user-data/>
+      </div>
     </div>
     
+    <app-footer/>
     <router-outlet/>
   `,
-  styles: []
+  
+  styles: ``
 })
 
 export class AppComponent implements AfterViewInit {
-  username: any;
-  surname: any;
   newMessages: number;
 
-  constructor(private translate: TranslateService) {
-    translate.setTranslation('en', defaultLanguage);
-    translate.setDefaultLang('en');
+  constructor() {
     this.newMessages = this.getRandomInt(0, 5);
   }
 
   @ViewChild(GenderSelectComponent) genderSelect!: GenderSelectComponent;
+  @ViewChild(UserDataComponent) userData!: UserDataComponent;
+
   ngAfterViewInit() {
     console.log(this.genderSelect.prefGender);
+    console.log(this.userData.username);
+    console.log(this.userData.surname);
   }
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
-
-// export class AppComponent {
-//   username = 'Kylar';
-//   newMessages = 1;
-
-//   constructor(private translate: TranslateService) {
-//     translate.setDefaultLang('en');
-//     translate.use('en');
-//   }
-// }
