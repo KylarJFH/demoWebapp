@@ -20,14 +20,10 @@
     margin-top: 10px;
 }
 
-#div-no-indent-noflex {
-    align-items: flex-start;
-    margin-top: 10px;
-}
-
 #text-isbold {
     font-weight: bold;
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
