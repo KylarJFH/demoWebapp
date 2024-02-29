@@ -1,7 +1,9 @@
 {
-	"genderFemale": "female",
-	"genderMale": "male",
-	"genderOther": "other",
+	"gender": {
+		"female": "female",
+		"male": "male",
+		"other": "other"
+	},
 	"madeBy": "Made by {author}",
 	"numberOfNewMessages": "{formality, select, informal{} other{}}You have {count, plural, =0{<strong>no</strong> new messages} =1{<strong>one</strong> new message} other{<strong>{count}</strong> new messages}}.",
 	"prefGender": "{gender, select, male{male} female{female} other{other}}",

@@ -10,9 +10,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
     <select id="box" [(ngModel)]="prefGender" (ngModelChange)="setPrefGender()">
       <option value="" [disabled]="prefGender === 'selectGender'">{{'selectGender' | translate}}</option>
-      <option value="male">{{'genderMale' | translate}}</option>
-      <option value="female">{{'genderFemale' | translate}}</option>
-      <option value="other">{{'genderOther' | translate}}</option>
+      <option value="male">{{'gender.male' | translate}}</option>
+      <option value="female">{{'gender.female' | translate}}</option>
+      <option value="other">{{'gender.other' | translate}}</option>
     </select>
 
     <!-- **************Complicated dropdown************** -->
