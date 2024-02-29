@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-user-data',
   template: `
-    <div id="div-text1">
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="username">
-      <label for="surname">Surname:</label>
-      <input type="text" id="surname" [(ngModel)]="surname">
+    <div id="div-no-indent">
+      <label for="username">{{ 'user-data.username' | translate }}:</label>
+      <input type="text" id="box" [(ngModel)]="username">
+      <label for="surname">{{ 'user-data.surname' | translate }}:</label>
+      <input type="text" id="box" [(ngModel)]="surname">
     </div>
   `,
 
@@ -17,5 +17,4 @@ import { Component } from '@angular/core';
 export class UserDataComponent {
   username: any;
   surname: any;
-
 }

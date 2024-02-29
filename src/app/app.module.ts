@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -11,18 +12,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GenderSelectComponent } from './gender-select/gender-select.component';
-import { FormsModule } from '@angular/forms';
 import { UserDataComponent } from './user-data/user-data.component';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     GenderSelectComponent,
+    UserDataComponent,
     FooterComponent,
-    UserDataComponent
   ],
   imports: [
     BrowserModule,

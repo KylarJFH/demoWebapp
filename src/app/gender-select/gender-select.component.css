@@ -1,6 +1,8 @@
-#button {
+/* **************Complicated dropdown************** */
+/* #button {
+    height: 30px;
     font-size: 13px;
-    min-width: 150px;
+    width: 150px;
     position: relative;
     background-color: transparent; 
     border: 1px solid #CCC; 
@@ -37,3 +39,21 @@
       display: block;
     }
   }
+
+  #button1 {
+    background-color: #fff; 
+    border: 1px solid #000; 
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  #components-havegap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+   */
+   /* **************Complicated dropdown************** */

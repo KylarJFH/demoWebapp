@@ -1,10 +1,14 @@
 {
-  "genderFemale": "weiblich",
-  "genderMale": "männlich",
-  "genderOther": "divers",
-  "madeBy": "Erstellt von {author}",
-  "numberOfNewMessages": "Du hast {count, plural, =0{keine neuen Nachrichten} =1{eine neue Nachricht} other{{count} neue Nachrichten}}.",
-  "prefGender": "{gender, select, male{männlich} female{weiblich} other{divers}}",
-  "selectGender": "Geschlecht wählen",
-  "welcomeMessage": "Willkommen in dieser {title}, {gender, select, male{Herr {surname}} female{Frau {surname}} other{{username}}}."
+	"genderFemale": "weiblich",
+	"genderMale": "männlich",
+	"genderOther": "divers",
+	"madeBy": "Erstellt von {author}",
+	"numberOfNewMessages": "{formality, select, informal{Du hast} other{Sie haben}} {count, plural, =0{<strong>keine</strong> neuen Nachrichten} =1{<strong>eine</strong> neue Nachricht} other{<strong>{count}</strong> neue Nachrichten}}.",
+	"prefGender": "{gender, select, male{männlich} female{weiblich} other{divers}}",
+	"selectGender": "Geschlecht wählen",
+	"user-data": {
+		"surname": "Nachname",
+		"username": "Nutzername"
+	},
+	"welcomeMessage": "Willkommen in dieser {title}, {gender, select, male{Herr {surname}} female{Frau {surname}} other{{username}}}."
 }

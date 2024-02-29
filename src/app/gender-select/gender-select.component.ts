@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gender-select',
   template: `
-    <div id="button" (click)="isDropdownActive=true">
-      <div style="display: flex; width: 100%; justify-content: space-between">
-        {{ prefGender?.name || 'selectGender' | translate }}
-        <span *ngIf="prefGender" (click)="clearSelection(); $event.stopImmediatePropagation()">x</span>
+    <select id="box" [(ngModel)]="selectedFormality" (change)="formalityChanged()">
+      <option value="formal">formal</option>
+      <option value="informal">informal</option>
+    </select>
+
+    <select id="box" [(ngModel)]="prefGender" (ngModelChange)="setPrefGender()">
+      <option value="" [disabled]="prefGender === 'selectGender'">{{'selectGender' | translate}}</option>
+      <option value="male">{{'genderMale' | translate}}</option>
+      <option value="female">{{'genderFemale' | translate}}</option>
+      <option value="other">{{'genderOther' | translate}}</option>
+    </select>
+
+    <!-- **************Complicated dropdown************** -->
+    <!-- <div id="button" (click)="isDropdownActive=true">
+      <div id="components-havegap">
+        <div>{{ prefGender?.name || 'selectGender' | translate }}</div>
+        <button *ngIf="prefGender" (click)="clearSelection(); $event.stopImmediatePropagation()" id="button1">X</button>
       </div>
 
       <div id="dropdown" [ngClass]="{ active: isDropdownActive }">
@@ -16,24 +29,40 @@ import { Component } from '@angular/core';
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
+    <!-- **************Complicated dropdown************** -->
+
   `,
-  styleUrls: ['./gender-select.component.css']
+  styles: ``
 })
 export class GenderSelectComponent {
-  isDropdownActive = false;
-  prefGender: any;
-  genderList = [
-    { name: 'genderMale', value: 'male' },
-    { name: 'genderFemale', value: 'female' },
-    { name: 'genderOther', value: 'other' },
-  ];
-  
-  selectGender(gender: any) {
-    this.prefGender = gender;
+  prefGender: string = '';
+
+  setPrefGender() {
+    console.log('Selected gender:', this.prefGender);
   }
 
-  clearSelection() {
-    this.prefGender = undefined;
+  @Output() formalitySelected = new EventEmitter<string>();
+  selectedFormality: string = 'formal';
+
+  formalityChanged() {
+    this.formalitySelected.emit(this.selectedFormality);
   }
+
+  //**************Complicated dropdown**************
+  // isDropdownActive = false;
+  // genderList = [
+  //   { name: 'genderMale', value: 'male' },
+  //   { name: 'genderFemale', value: 'female' },
+  //   { name: 'genderOther', value: 'other' },
+  // ];
+
+  // selectGender(gender: any) {
+  //   this.prefGender = gender;
+  // }
+
+  // clearSelection() {
+  //   this.prefGender = undefined;
+  // }
+  //**************Complicated dropdown**************
 }
