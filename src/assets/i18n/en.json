@@ -15,5 +15,5 @@
 		"surname": "Surname",
 		"username": "Username"
 	},
-	"welcomeMessage": "Welcome to this {title}, {gender, select, male{Mr. {surname}} female{Ms. {surname}} other{{username}}}."
+	"welcomeMessage": "Welcome to the {title}, {gender, select, male{Mr. {surname}} female{Ms. {surname}} other{{username}}}."
 }
