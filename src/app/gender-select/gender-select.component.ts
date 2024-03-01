@@ -3,22 +3,30 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-gender-select',
   template: `
-    <select id="box" [(ngModel)]="selectedFormality" (change)="formalityChanged()">
-      <option value="formal">formal</option>
-      <option value="informal">informal</option>
-    </select>
+  <div id="align-row">
+    <div id="has-no-margin-left">
+      <label for="formality">{{ 'user-data.selectFormality' | translate }}:</label>
+      <select id="box" [(ngModel)]="selectedFormality" (change)="formalityChanged()">
+        <option value="formal">{{'user-data.formal' | translate}}</option>
+        <option value="informal">{{'user-data.informal' | translate}}</option>
+      </select>
+    </div>
 
-    <select id="box" [(ngModel)]="prefGender" (ngModelChange)="setPrefGender()">
-      <option value="" [disabled]="prefGender === 'selectGender'">{{'selectGender' | translate}}</option>
-      <option value="male">{{'gender.male' | translate}}</option>
-      <option value="female">{{'gender.female' | translate}}</option>
-      <option value="other">{{'gender.other' | translate}}</option>
-    </select>
+    <div id="has-no-margin-left">
+      <label for="gender">{{ 'user-data.selectGender' | translate }}:</label>
+      <select id="box" [(ngModel)]="prefGender" (ngModelChange)="setPrefGender()">
+        <option value=""></option>
+        <option value="male">{{'user-data.gender.male' | translate}}</option>
+        <option value="female">{{'user-data.gender.female' | translate}}</option>
+        <option value="other">{{'user-data.gender.other' | translate}}</option>
+      </select>
+    </div>
+  </div>
 
     <!-- **************Complicated dropdown************** -->
     <!-- <div id="button" (click)="isDropdownActive=true">
       <div id="components-havegap">
-        <div>{{ prefGender?.name || 'selectGender' | translate }}</div>
+        <div>{{ prefGender?.name || 'user-data.selectGender' | translate }}</div>
         <button *ngIf="prefGender" (click)="clearSelection(); $event.stopImmediatePropagation()" id="button1">X</button>
       </div>
 

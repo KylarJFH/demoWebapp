@@ -6,12 +6,12 @@ import { UserDataComponent } from './user-data/user-data.component';
   selector: 'app-root',
   template: `
     <app-header/>
-    <div id="div-indent" style="margin-bottom: 20px">
+    <div id="has-margin-left" style="margin-bottom: 20px">
       <div>
-        <h1>{{ 'welcomeMessage' | translate: {title: 'Demo Web App', gender: genderSelect?.prefGender, surname: userData?.surname, username: userData?.username} }}</h1>
+        <h1>{{ 'welcomeMessage' | translate: {title: 'Demo Web App', formality: formality, gender: genderSelect?.prefGender, surname: userData?.surname, username: userData?.username} }}</h1>
         <p [innerHTML]="'numberOfNewMessages' | translate: {formality: formality, count: newMessages}"></p>
       </div>
-      <div id="div-no-indent">
+      <div id="has-no-margin-left">
         <app-gender-select (formalitySelected)="onFormalitySelected($event)"></app-gender-select>
         <app-user-data/>
       </div>
@@ -19,10 +19,8 @@ import { UserDataComponent } from './user-data/user-data.component';
     <app-footer/>
     <router-outlet/>
   `,
-  
   styles: ``
 })
-
 export class AppComponent implements AfterViewInit {
   newMessages: number;
   formality: string = '';

@@ -1,14 +1,17 @@
 {
-	"gender": {
-		"female": "weiblich",
-		"male": "männlich",
-		"other": "divers"
-	},
 	"madeBy": "Erstellt von {author}",
-	"numberOfNewMessages": "{formality, select, informal{Du hast} other{Sie haben}} {count, plural, =0{<strong>keine</strong> neuen Nachrichten} =1{<strong>eine</strong> neue Nachricht} other{<strong>{count}</strong> neue Nachrichten}}.",
-	"prefGender": "{gender, select, male{männlich} female{weiblich} other{divers}}",
-	"selectGender": "Geschlecht wählen",
+	"numberOfNewMessages": "{formality, select, informal{Du hast} other{Sie haben}} <strong>{count, plural, =0{keine} =1{eine} other{{count}} }</strong> {count, plural, =0{neuen Nachrichten} =1{neue Nachricht} other{neue Nachrichten} }.",
 	"user-data": {
+		"formal": "formell",
+		"gender": {
+			"female": "weiblich",
+			"male": "männlich",
+			"other": "divers"
+		},
+		"informal": "informell",
+		"prefGender": "{gender, select, male{männlich} female{weiblich} other{divers}}",
+		"selectFormality": "Formalität wählen",
+		"selectGender": "Geschlecht wählen",
 		"surname": "Nachname",
 		"username": "Nutzername"
 	},
